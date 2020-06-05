@@ -1,0 +1,249 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>IIITDWD</title>
+    <style type="text/css">
+        #myBtn {
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 0px;
+            /* Place the button 30px from the right */
+            z-index: 7;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: white;
+            /* Set a background color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 15px;
+            /* Some padding */
+            border-radius: 10px;
+            /* Rounded corners */
+            font-size: 15px;
+            /* Increase font size */
+            height: 50px;
+        }
+        
+        #arrow {
+            height: 40px;
+            widows: 40px;
+            float: right;
+            position: static;
+        }
+        
+        body {
+            padding: 5px, 5px, 5px, 5px;
+        }
+        
+        h2 {
+            color: navy;
+        }
+        
+        #home {
+            float: right;
+            clear: both;
+            border: thick;
+        }
+        
+        #info {
+            font-family: "Times New Roman", Times, serif;
+            font-size: medium;
+            color: black;
+        }
+        
+        a {
+            text-decoration: none;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bolder;
+            font-size: large;
+            color: white;
+            background-color: black;
+        }
+        
+        p {
+            color: navy;
+            text-decoration: blink;
+            font-size: x-large;
+            font-family: "Times New Roman", Times, serif;
+        }
+        
+        #char2 {
+            padding-top: 20px;
+            width: 50%;
+            float: right;
+            padding-top: 0px;
+        }
+        
+        #chart1 {
+            width: 50%;
+            float: left;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div id="bar1">
+        <h2><strong><u>Placement statistics of IIIT-DWD|2019:</u></strong></h2>
+        <p id="info">The Indian Institute of Information Technology Dharwad, recently declared as the institute of national importance has brought down the negotiation tables. Probability of the students getting placed is quite impressive. Handpicked graduates are
+            being paid reasonably. Both the streams namely CSE and ECE, 2015 being the first opening batch of the institute has given good progress till date.</p>
+        <canvas id="mybarChart" height="100%"></canvas>
+        <script src="chart.js@2.8.0"></script>
+        <script>
+            var ctx = document.getElementById('mybarChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+                // The data for our dataset
+                data: {
+                    labels: ['CSE', 'ECE', 'OVER-ALL'],
+                    datasets: [{
+                        label: 'Total registered students',
+                        backgroundColor: 'green',
+                        borderWidth: '2px',
+                        data: [20, 13, 33],
+                    }, {
+                        label: 'Total students Placed',
+                        backgroundColor: 'pink',
+                        borderColor: 'black',
+                        borderWidth: '2px',
+                        data: [7, 3, 10],
+                    }, {
+                        label: 'others',
+                        backgroundColor: 'red',
+                        borderWidth: '2px',
+                        data: [13, 10, 23],
+                    }, {
+                        label: 'Average salary LPA',
+                        backgroundColor: 'indigo',
+                        borderColor: 'black',
+                        borderWidth: '2px',
+                        data: [5, 2, 4],
+                    }, {
+                        label: 'Highest Salary',
+                        backgroundColor: 'orange',
+                        borderColor: 'black',
+                        borderWidth: '2px',
+                        data: [15, 10, 13],
+                    }]
+                },
+                // Configuration options go here
+                options: {
+                    legend: {
+                        position: 'right',
+                    }
+                }
+            });
+        </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </div>
+    <div id="chart1">
+        <p>CSE</p>
+        <canvas id="myChart" height="100%"></canvas>
+        <script src="chart.js@2.8.0"></script>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'pie',
+                // The data for our dataset
+                data: {
+                    labels: ['Percentage of students placed', 'others'],
+                    datasets: [{
+                        backgroundColor: ['rgb(0,0,0)', 'rgb(0,191,255)'],
+                        borderWidth: '2px',
+                        data: [43, 57],
+                    }]
+                },
+                // Configuration options go here
+                options: {
+                    legend: {
+                        position: 'right',
+                    }
+                }
+            });
+        </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </div>
+    <div id="char2">
+        <p>ECE</p>
+        <script src="chart.js@2.8.0"></script>
+        <canvas id="myChart2" height="100%"></canvas>
+
+        <script>
+            var ctxA = document.getElementById('myChart2').getContext('2d');
+            var charta = new Chart(ctxA, {
+                // The type of chart we want to create
+                type: 'pie',
+                // The data for our dataset
+                data: {
+                    labels: ['Percentage of students placed', 'others'],
+                    datasets: [{
+                        backgroundColor: ['rgb(25,25,112)', 'rgb(112,128,144)'],
+                        borderWidth: '2px',
+                        data: [23, 77],
+                    }]
+                },
+                // Configuration options go here
+                options: {
+                    legend: {
+                        position: 'right',
+                    }
+                }
+            });
+        </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script>
+            mybutton = document.getElementById("myBtn");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+        </script>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><img id="arrow" src="toparrow.png"/></button>
+    </div>
+
+
+
+</body>
+
+</html>

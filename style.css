@@ -1,0 +1,28 @@
+﻿.introduction{
+    padding-top: 1cm;
+    text-align: center;
+    color: #333;
+    text-align:center;
+}
+form {
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+    display: inline;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+  }
+#search {
+  width: 60%;
+}
+#submit {
+  display: inline;
+}
+p{
+    text-align: center;
+    width: 80%;
+}
+.lister{
+    align-content: center;
+}
